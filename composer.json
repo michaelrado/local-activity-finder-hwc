@@ -47,9 +47,9 @@
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
       "@php artisan key:generate",
       "@php artisan migrate --force",
-      "@php artisan migrate:with-fixtures --force",
-      "npm install",
-      "npm run build"
+      "@php artisan migrate:with-fixtures",
+      "npm --prefix ui install",
+      "npm --prefix ui run build"
     ],
     "dev": [
       "Composer\\Config::disableProcessTimeout",
