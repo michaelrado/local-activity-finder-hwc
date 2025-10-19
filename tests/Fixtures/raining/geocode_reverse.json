@@ -1,0 +1,14 @@
+{
+  "lat": 52.3682393,
+  "lon": 4.9006605,
+  "display_name": "Centrum, Amsterdam, Noord-Holland, Nederland",
+  "address": {
+    "suburb": "Centrum",
+    "city": "Amsterdam",
+    "municipality": "Amsterdam",
+    "state": "Noord-Holland",
+    "ISO3166-2-lvl4": "NL-NH",
+    "country": "Nederland",
+    "country_code": "nl"
+  }
+}

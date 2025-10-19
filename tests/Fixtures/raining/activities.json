@@ -1,0 +1,724 @@
+{
+  "items": [
+    {
+      "id": "5199cde330988f0240592797b19def6d4840f00103f90145f193ba010000009203104c65204c697672652064652043617665",
+      "name": "Le Livre de Cave",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.drinks",
+      "lat": 48.85887499972733,
+      "lon": 2.3201144999999994,
+      "distanceM": 6,
+      "indoor": true
+    },
+    {
+      "id": "51c0e09a3bfa8f0240590ca44e86f46d4840f00103f90152e233370100000092030a4d6f6e20537175617265",
+      "name": "Mon Square",
+      "category": "catering,catering.restaurant,catering.restaurant.french,vegan",
+      "lat": 48.85902479972728,
+      "lon": 2.3203014999999994,
+      "distanceM": 24,
+      "indoor": true
+    },
+    {
+      "id": "51140b7c45b78e0240593d85bfb6d96d4840f00103f9012b7d7cd0020000009203084672616e70726978",
+      "name": "Franprix",
+      "category": "commercial,commercial.convenience,wheelchair,wheelchair.limited",
+      "lat": 48.85820659972749,
+      "lon": 2.3196855000000003,
+      "distanceM": 80,
+      "indoor": true
+    },
+    {
+      "id": "51cdc547a5a98f024059c815d3371f6e4840f00102f901a129261600000000",
+      "name": "Natural Feature",
+      "category": "natural,natural.forest",
+      "lat": 48.86032769972695,
+      "lon": 2.320147792103603,
+      "distanceM": 160,
+      "indoor": false
+    },
+    {
+      "id": "51760767a66a9102405921c15138cc6d4840f00103f901de83d77602000000",
+      "name": "Fountain near Rue Las Cases",
+      "category": "tourism.attraction.fountain",
+      "lat": 48.85779479972758,
+      "lon": 2.3210042,
+      "distanceM": 141,
+      "indoor": false
+    },
+    {
+      "id": "51cab9b99d228c02405957fbd749d86d4840f00103f90110890429020000009203114c6520436166c3a9205375c3a9646f6973",
+      "name": "Le Café Suédois",
+      "category": "catering,catering.cafe",
+      "lat": 48.8581630997275,
+      "lon": 2.3184253999999997,
+      "distanceM": 143,
+      "indoor": true
+    },
+    {
+      "id": "511fbde13e728b02405967a0178ff76d4840f00103f901c86aa65d01000000920304466c6f73",
+      "name": "Flos",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.85911739972726,
+      "lon": 2.318089,
+      "distanceM": 145,
+      "indoor": true
+    },
+    {
+      "id": "51a97b09ba628b024059dfb558e1f16d4840f00103f901b89da9520200000092032148616e612028726573746f202620c3a97069636573206a61706f6e616973657329",
+      "name": "Hana (resto & épices japonaises)",
+      "category": "catering,catering.restaurant",
+      "lat": 48.85894409972729,
+      "lon": 2.3180593999999997,
+      "distanceM": 145,
+      "indoor": true
+    },
+    {
+      "id": "51b7a4b448248b02405900dcbc12ed6d4840f00103f9010519658e0200000092031743697665747465206465206c27417373656d626cc3a965",
+      "name": "Civette de l'Assemblée",
+      "category": "commercial,service,service.bookmaker",
+      "lat": 48.85879739972734,
+      "lon": 2.3179402999999996,
+      "distanceM": 154,
+      "indoor": true
+    },
+    {
+      "id": "5139fcda9f308d0240592e340dd0c76d4840f00103f9015a9723290100000092030a4c6520426173696c6963",
+      "name": "Le Basilic",
+      "category": "catering,catering.restaurant,catering.restaurant.french",
+      "lat": 48.85766029972761,
+      "lon": 2.3189403999999993,
+      "distanceM": 159,
+      "indoor": true
+    },
+    {
+      "id": "5195dba5872f8f02405990df97e5216e4840f00102f901dcb34b0700000000",
+      "name": "Natural Feature",
+      "category": "natural,natural.water",
+      "lat": 48.860409449726944,
+      "lon": 2.3199148747912184,
+      "distanceM": 169,
+      "indoor": false
+    },
+    {
+      "id": "51a952697a3f940240599aa7367ef26d4840f00103f90128e10e4b01000000",
+      "name": "Clock near Place Jacques Bainville",
+      "category": "tourism.attraction.clock",
+      "lat": 48.85896279972731,
+      "lon": 2.3223866999999996,
+      "distanceM": 172,
+      "indoor": false
+    },
+    {
+      "id": "5110806e1e3d940240593eccc635f46d4840f00103f90127e10e4b01000000",
+      "name": "Clock near Place Jacques Bainville",
+      "category": "tourism.attraction.clock",
+      "lat": 48.859015199727295,
+      "lon": 2.3223822,
+      "distanceM": 172,
+      "indoor": false
+    },
+    {
+      "id": "51f39194f430940240590a9d339e086e4840f00103f90135829cac0000000092031354617274696e652065742043686f636f6c6174",
+      "name": "Tartine et Chocolat",
+      "category": "commercial,commercial.clothing,commercial.clothing.clothes,commercial.clothing.kids",
+      "lat": 48.85963799972713,
+      "lon": 2.322359,
+      "distanceM": 189,
+      "indoor": true
+    },
+    {
+      "id": "51d9d64fff59930240594332957a166e4840f00103f901318b9cac0000000092031a4b6e6f6c6c20496e7465726e6174696f6e616c204672616e6365",
+      "name": "Knoll International France",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.86006099972703,
+      "lon": 2.3219490000000005,
+      "distanceM": 191,
+      "indoor": true
+    },
+    {
+      "id": "513604c765dc9402405923ed6aeee86d4840f00103f901f9729cac000000009203124c6962726169726965204a756c6c69617264",
+      "name": "Librairie Julliard",
+      "category": "commercial,commercial.books,wheelchair,wheelchair.yes",
+      "lat": 48.85867099972736,
+      "lon": 2.322686,
+      "distanceM": 195,
+      "indoor": true
+    },
+    {
+      "id": "51d7ffef3e7d8a0240599475e554d76d4840f00103f901516b9f700100000092031243726570657269652053616c616465726965",
+      "name": "Creperie Saladerie",
+      "category": "catering,catering.cafe",
+      "lat": 48.858133899727505,
+      "lon": 2.3176216999999997,
+      "distanceM": 196,
+      "indoor": true
+    },
+    {
+      "id": "515e3ea3be768a0240594df731d1d66d4840f00103f9011916cb9b00000000920310436c75622064657320506fc3a8746573",
+      "name": "Club des Poètes",
+      "category": "catering,catering.restaurant,catering.restaurant.french,internet_access",
+      "lat": 48.85811819972751,
+      "lon": 2.3176093,
+      "distanceM": 198,
+      "indoor": true
+    },
+    {
+      "id": "51bf823463d194024059982a1f7efe6d4840f00103f901217d9cac0000000092030d4c6520536f6c66c3a972696e6f",
+      "name": "Le Solférino",
+      "category": "catering,catering.cafe",
+      "lat": 48.85932899972721,
+      "lon": 2.322665,
+      "distanceM": 198,
+      "indoor": true
+    },
+    {
+      "id": "515566a5a4e28a0240590f2c8c84116e4840f00103f90174b7a6590000000092030f41752050657469742050616c616973",
+      "name": "Au Petit Palais",
+      "category": "catering,catering.cafe",
+      "lat": 48.85990959972707,
+      "lon": 2.3178150999999994,
+      "distanceM": 198,
+      "indoor": true
+    },
+    {
+      "id": "517c39fdeabb8c0240596caf30d4bc6d4840f00103f901c7b9232901000000920306506963617264",
+      "name": "Picard",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.frozen_food",
+      "lat": 48.85732509972772,
+      "lon": 2.3187178,
+      "distanceM": 199,
+      "indoor": true
+    },
+    {
+      "id": "51330f05d8ec8d0240598d2a1e13296e4840f00103f9016d09ab1002000000920315436166c3a920646573204d696e697374c3a8726573",
+      "name": "Café des Ministères",
+      "category": "catering,catering.restaurant,catering.restaurant.french",
+      "lat": 48.860628499726865,
+      "lon": 2.3192994,
+      "distanceM": 201,
+      "indoor": true
+    },
+    {
+      "id": "51a4ce92b6a78a02405925fc4f44d06d4840f00103f9012bc294ba01000000920307416d70656c6f73",
+      "name": "Ampelos",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.drinks",
+      "lat": 48.85791829972758,
+      "lon": 2.3177027,
+      "distanceM": 202,
+      "indoor": true
+    },
+    {
+      "id": "516fbc3b32568b0240596d7caf67196e4840f00103f9018271a9520200000092030e526f6c6c65742050726164696572",
+      "name": "Rollet Pradier",
+      "category": "catering,catering.cafe",
+      "lat": 48.860150299727,
+      "lon": 2.3180355,
+      "distanceM": 203,
+      "indoor": true
+    },
+    {
+      "id": "511570cff3a78d024059854e524b296e4840f00103f9014aaf31120200000092030c43617361204765726d61696e",
+      "name": "Casa Germain",
+      "category": "catering,catering.restaurant",
+      "lat": 48.86063519972689,
+      "lon": 2.319168,
+      "distanceM": 204,
+      "indoor": true
+    },
+    {
+      "id": "5198df6932e38d024059ec59cffbb56d4840f00103f9018f92b31f020000009203064c6520313232",
+      "name": "Le 122",
+      "category": "catering,catering.restaurant",
+      "lat": 48.857116199727756,
+      "lon": 2.319281,
+      "distanceM": 205,
+      "indoor": true
+    },
+    {
+      "id": "51b7465f9c5394024059ddf36554cf6d4840f00103f9012634bffc0200000092030d5361766575727320657420436f",
+      "name": "Saveurs et Co",
+      "category": "catering,catering.fast_food",
+      "lat": 48.85788969972757,
+      "lon": 2.3224251,
+      "distanceM": 207,
+      "indoor": true
+    },
+    {
+      "id": "51a4ce92b6a78a0240599daeeb5dcd6d4840f00103f901587884710100000092030448616e61",
+      "name": "Hana",
+      "category": "catering,catering.cafe",
+      "lat": 48.857829799727575,
+      "lon": 2.3177027,
+      "distanceM": 208,
+      "indoor": true
+    },
+    {
+      "id": "512ccf28024195024059f78e4931f66d4840f00103f9012989de4e020000009203074e69636f6c6173",
+      "name": "Nicolas",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.drinks",
+      "lat": 48.85907569972726,
+      "lon": 2.3228779,
+      "distanceM": 209,
+      "indoor": true
+    },
+    {
+      "id": "517986ba59cd94024059e8452e34d76d4840f00103f9014c52860a0100000092030d4c652044726f7020436166c3a9",
+      "name": "Le Drop Café",
+      "category": "catering,catering.bar,wheelchair,wheelchair.limited",
+      "lat": 48.85812999972751,
+      "lon": 2.3226573,
+      "distanceM": 209,
+      "indoor": true
+    },
+    {
+      "id": "51398ceec5bc930240596f3e89bac56d4840f00103f90152debefc02000000",
+      "name": "Commercial near Rue de Bellechasse",
+      "category": "commercial,service,service.beauty,service.beauty.hairdresser",
+      "lat": 48.857596699727644,
+      "lon": 2.3221373999999995,
+      "distanceM": 210,
+      "indoor": true
+    },
+    {
+      "id": "5129a84d41238d0240590b325d84296e4840f00103f9010c66994c0200000092030a4c6520426f7572626f6e",
+      "name": "Le Bourbon",
+      "category": "catering,catering.restaurant,catering.restaurant.french",
+      "lat": 48.86064199972687,
+      "lon": 2.3189149,
+      "distanceM": 212,
+      "indoor": true
+    },
+    {
+      "id": "51cccc71135a8b02405946dcdb291d6e4840f00103f90114d1d207010000009203074d6f756c69c3a9",
+      "name": "Moulié",
+      "category": "commercial,commercial.florist",
+      "lat": 48.86026499972699,
+      "lon": 2.3180429,
+      "distanceM": 212,
+      "indoor": true
+    },
+    {
+      "id": "519236fa3d5695024059d2d4371be16d4840f00103f901c35fcf470000000092030b4d7563686120436166c3a9",
+      "name": "Mucha Café",
+      "category": "catering,catering.cafe,wheelchair,wheelchair.limited",
+      "lat": 48.85843219972743,
+      "lon": 2.3229184,
+      "distanceM": 217,
+      "indoor": true
+    },
+    {
+      "id": "51dff94509fa8b02405955458827bb6d4840f00103f901f1265d580200000092031a313039204772656e656c6c65202d2050617269732037c3a86d65",
+      "name": "109 Grenelle - Paris 7ème",
+      "category": "commercial,service,service.beauty,service.beauty.hairdresser",
+      "lat": 48.85727399972772,
+      "lon": 2.318348,
+      "distanceM": 218,
+      "indoor": true
+    },
+    {
+      "id": "51eb5a311290950240595aecf2f3f06d4840f00103f9011c89de4e02000000920311426f7264616c6c6f2050696e686569726f",
+      "name": "Bordallo Pinheiro",
+      "category": "catering,catering.fast_food",
+      "lat": 48.85891579972731,
+      "lon": 2.3230286999999996,
+      "distanceM": 219,
+      "indoor": true
+    },
+    {
+      "id": "51b62e90fbb194024059081d2781cd6d4840f00103f90179575c8001000000",
+      "name": "Commercial near Rue de Bellechasse",
+      "category": "commercial,commercial.convenience",
+      "lat": 48.857833999727575,
+      "lon": 2.3226050999999996,
+      "distanceM": 221,
+      "indoor": true
+    },
+    {
+      "id": "5110e335afea8c024059d29c61b02c6e4840f00102f90169e522390000000092031850617269732c207269766573206465206c61205365696e65",
+      "name": "Paris, rives de la Seine",
+      "category": "heritage,heritage.unesco,natural,natural.protected_area",
+      "lat": 48.86073879972686,
+      "lon": 2.3188069999999996,
+      "distanceM": 225,
+      "indoor": false
+    },
+    {
+      "id": "51b6e10bee629502405944a453f8d86d4840f00103f9015d37bffc02000000",
+      "name": "Commercial near Rue Saint-Dominique",
+      "category": "commercial,commercial.florist",
+      "lat": 48.85818389972749,
+      "lon": 2.3229426,
+      "distanceM": 226,
+      "indoor": true
+    },
+    {
+      "id": "51685c3810929502405988a60575db6d4840f00103f901a0b505580200000092030a4d6172696f6e6e617564",
+      "name": "Marionnaud",
+      "category": "commercial,commercial.health_and_beauty,commercial.health_and_beauty.cosmetics,wheelchair",
+      "lat": 48.85825979972748,
+      "lon": 2.3230325,
+      "distanceM": 230,
+      "indoor": true
+    },
+    {
+      "id": "51964c0460f295024059af2b51f2ea6d4840f00103f90165619cac00000000920308476f7373656c696e",
+      "name": "Gosselin",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.bakery",
+      "lat": 48.858732499727346,
+      "lon": 2.3232162,
+      "distanceM": 233,
+      "indoor": true
+    },
+    {
+      "id": "51569a6104148b024059bfb75ac8486e4840f00101f901e88d0f000000000092030e50616c61697320426f7572626f6e",
+      "name": "Palais Bourbon",
+      "category": "building,building.historic,building.office,office",
+      "lat": 48.86159614972666,
+      "lon": 2.317909273365596,
+      "distanceM": 339,
+      "indoor": false
+    },
+    {
+      "id": "5162d3ef671d8a024059a9b115d5c76d4840f00103f901a55e057b02000000920311417520636f696e204465204c6120527565",
+      "name": "Au coin De La Rue",
+      "category": "catering,catering.cafe",
+      "lat": 48.8576608997276,
+      "lon": 2.3174389,
+      "distanceM": 234,
+      "indoor": true
+    },
+    {
+      "id": "510042dab573900240595639317b346e4840f00103f9014caf31120200000092030b4c61204461757068696e65",
+      "name": "La Dauphine",
+      "category": "catering,catering.cafe",
+      "lat": 48.86097659972681,
+      "lon": 2.3205332,
+      "distanceM": 235,
+      "indoor": true
+    },
+    {
+      "id": "514d0e44bbaf8f0240591401a36c366e4840f00103f90198ae311202000000",
+      "name": "Commercial near Rue de Courty",
+      "category": "commercial,commercial.convenience",
+      "lat": 48.86103589972677,
+      "lon": 2.3201594,
+      "distanceM": 239,
+      "indoor": true
+    },
+    {
+      "id": "518f43b3a1519002405903eba2d3a96d4840f00103f9010619658e020000009203125461626163206465206c61204d6169726965",
+      "name": "Tabac de la Mairie",
+      "category": "catering,catering.cafe",
+      "lat": 48.85674519972783,
+      "lon": 2.3204682,
+      "distanceM": 240,
+      "indoor": true
+    },
+    {
+      "id": "51fd2a65be289602405911f98bd5e66d4840f00103f901b037bffc02000000920308476f7373656c696e",
+      "name": "Gosselin",
+      "category": "commercial",
+      "lat": 48.85860699972739,
+      "lon": 2.3233199,
+      "distanceM": 242,
+      "indoor": true
+    },
+    {
+      "id": "51f08d21003896024059e2d67e1dee6d4840f00103f901c1c918ae0000000092031c436f6d706f7365202d2043616e74696e6520737572206d6573757265",
+      "name": "Compose - Cantine sur mesure",
+      "category": "catering,catering.restaurant",
+      "lat": 48.85882919972734,
+      "lon": 2.3233490000000003,
+      "distanceM": 242,
+      "indoor": true
+    },
+    {
+      "id": "513ae1ca7e8290024059c749b65b376e4840f00103f90149af311202000000",
+      "name": "Commercial near Boulevard Saint-Germain",
+      "category": "commercial,commercial.kiosk",
+      "lat": 48.86106439972678,
+      "lon": 2.3205614,
+      "distanceM": 245,
+      "indoor": true
+    },
+    {
+      "id": "51525b8f673c960240598b77dd57e56d4840f00103f90155058b5b0200000092030e4672616e636b2050726f766f7374",
+      "name": "Franck Provost",
+      "category": "commercial,service,service.beauty,service.beauty.hairdresser",
+      "lat": 48.85856149972741,
+      "lon": 2.3233574,
+      "distanceM": 245,
+      "indoor": true
+    },
+    {
+      "id": "510fb4a789e3950240591ee95e6dd66d4840f00103f90169686e7d01000000",
+      "name": "Commercial near Rue Saint-Dominique",
+      "category": "commercial,commercial.books",
+      "lat": 48.85810629972751,
+      "lon": 2.3231879,
+      "distanceM": 246,
+      "indoor": true
+    },
+    {
+      "id": "5187afc0a10196024059b8a4100e076e4840f00103f901bf563a2a01000000920306426175646f75",
+      "name": "Baudou",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.85959029972713,
+      "lon": 2.3232452999999995,
+      "distanceM": 247,
+      "indoor": true
+    },
+    {
+      "id": "5195511b8b5c96024059fbe3b904f16d4840f00103f901214c16ae000000009203154c652056696e2064652042656c6c65636861737365",
+      "name": "Le Vin de Bellechasse",
+      "category": "catering,catering.restaurant",
+      "lat": 48.858917799727315,
+      "lon": 2.3234187,
+      "distanceM": 247,
+      "indoor": true
+    },
+    {
+      "id": "510d90c3bbb78d02405956a8791e376e4840f00103f901a893e619010000009203234c6120426f757469717565206465206c27417373656d626c65204e6174696f6e616c65",
+      "name": "La Boutique de l'Assemble Nationale",
+      "category": "commercial,commercial.gift_and_souvenir,wheelchair,wheelchair.yes",
+      "lat": 48.86105709972678,
+      "lon": 2.3191981,
+      "distanceM": 249,
+      "indoor": true
+    },
+    {
+      "id": "5112adcbdf7396024059687fbecef26d4840f00103f901675c16ae0000000092030c44796e61737479204d696e67",
+      "name": "Dynasty Ming",
+      "category": "catering,catering.restaurant,catering.restaurant.chinese",
+      "lat": 48.85897239972729,
+      "lon": 2.3234632,
+      "distanceM": 251,
+      "indoor": true
+    },
+    {
+      "id": "518a5d914e138c02405927038466326e4840f00103f90107018de502000000",
+      "name": "Clock near Rue de l'Université",
+      "category": "tourism.attraction.clock",
+      "lat": 48.86091309972681,
+      "lon": 2.3183961999999996,
+      "distanceM": 255,
+      "indoor": false
+    },
+    {
+      "id": "51c5f70f33458a024059046089f2bb6d4840f00103f9015ba3c17402000000920312436f6363696e656c6c652045787072657373",
+      "name": "Coccinelle Express",
+      "category": "commercial,commercial.supermarket",
+      "lat": 48.857298199727694,
+      "lon": 2.3175148,
+      "distanceM": 256,
+      "indoor": true
+    },
+    {
+      "id": "51267bdf5394960240595a751367fb6d4840f00103f901be563a2a0100000092030e436f737461206427416d616c6669",
+      "name": "Costa d'Amalfi",
+      "category": "catering,catering.restaurant,catering.restaurant.italian,vegetarian",
+      "lat": 48.859234699727224,
+      "lon": 2.3235251000000003,
+      "distanceM": 258,
+      "indoor": true
+    },
+    {
+      "id": "51dcfd3beccf8f0240599bd1bcce3c6e4840f00103f9014baf31120200000092030e436166c3a920436f6e636f726465",
+      "name": "Café Concorde",
+      "category": "catering,catering.bar",
+      "lat": 48.86123069972674,
+      "lon": 2.3202207999999995,
+      "distanceM": 261,
+      "indoor": true
+    },
+    {
+      "id": "51505daf9fb4960240596211f22cf76d4840f00103f901685c16ae0000000092030d4c27417070617274656d656e74",
+      "name": "L'Appartement",
+      "category": "commercial,commercial.gift_and_souvenir",
+      "lat": 48.859105699727266,
+      "lon": 2.3235867,
+      "distanceM": 261,
+      "indoor": true
+    },
+    {
+      "id": "519097daf74d960240599dab75830d6e4840f00103f901d5523a2a010000009203074265727465696c",
+      "name": "Berteil",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.85978739972709,
+      "lon": 2.3233908999999997,
+      "distanceM": 265,
+      "indoor": true
+    },
+    {
+      "id": "5196b3d2ffcd96024059838578c5f86d4840f00103f901655c16ae0000000092030d416e6e69636b20476f7574616c",
+      "name": "Annick Goutal",
+      "category": "commercial,commercial.health_and_beauty,commercial.health_and_beauty.cosmetics",
+      "lat": 48.85915439972725,
+      "lon": 2.3236350999999997,
+      "distanceM": 265,
+      "indoor": true
+    },
+    {
+      "id": "516ebce078e389024059e1704ad0ba6d4840f00103f90148ff8e75020000009203067374656c6c65",
+      "name": "stelle",
+      "category": "catering,catering.restaurant,catering.restaurant.italian",
+      "lat": 48.85726359972774,
+      "lon": 2.3173284,
+      "distanceM": 268,
+      "indoor": true
+    },
+    {
+      "id": "5159ee1692dd96024059ce3de1d7fe6d4840f00103f901665c16ae000000009203114361727265666f75722045787072657373",
+      "name": "Carrefour Express",
+      "category": "commercial,commercial.convenience",
+      "lat": 48.859339699727215,
+      "lon": 2.3236648,
+      "distanceM": 270,
+      "indoor": true
+    },
+    {
+      "id": "518c5940b2ca960240599e586591dc6d4840f00103f901ec553a2a010000009203064772616e6765",
+      "name": "Grange",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.85829369972747,
+      "lon": 2.3236288,
+      "distanceM": 271,
+      "indoor": true
+    },
+    {
+      "id": "51737918ffe389024059e87b7139b96d4840f00103f901a3577b36000000009203164247206c276174656c696572206d6172616963686572",
+      "name": "BG l'atelier maraicher",
+      "category": "commercial,commercial.food_and_drink,commercial.food_and_drink.fruit_and_vegetable",
+      "lat": 48.85721509972774,
+      "lon": 2.3173293999999998,
+      "distanceM": 272,
+      "indoor": true
+    },
+    {
+      "id": "511b800d881097024059eb140da9fd6d4840f00103f9019fb50558020000009203084e69636f6c652773",
+      "name": "Nicole's",
+      "category": "catering,catering.restaurant",
+      "lat": 48.859303599727205,
+      "lon": 2.323762,
+      "distanceM": 276,
+      "indoor": true
+    },
+    {
+      "id": "51902111644e910240595dc1f0a19f6d4840f00103f901ea1d2a5502000000",
+      "name": "Catering near Rue de Grenelle",
+      "category": "catering,catering.fast_food",
+      "lat": 48.85643409972793,
+      "lon": 2.3209503,
+      "distanceM": 281,
+      "indoor": true
+    },
+    {
+      "id": "517027c7534597024059ed69b000016e4840f00103f90185d8adbc02000000920312536f7576656e697273206465205061726973",
+      "name": "Souvenirs de Paris",
+      "category": "commercial,commercial.gift_and_souvenir",
+      "lat": 48.85940559972719,
+      "lon": 2.3238626999999994,
+      "distanceM": 285,
+      "indoor": true
+    },
+    {
+      "id": "51bcee0802bf91024059990dec889e6d4840f00103f901e236d02b010000009203024553",
+      "name": "ES",
+      "category": "catering,catering.restaurant",
+      "lat": 48.85640059972793,
+      "lon": 2.3211651,
+      "distanceM": 289,
+      "indoor": true
+    },
+    {
+      "id": "518f3287495d97024059ce1cbb9b026e4840f00103f901be16aebc0200000092031442616d626f757320c3a0206c6120566170657572",
+      "name": "Bambous à la Vapeur",
+      "category": "catering,catering.fast_food",
+      "lat": 48.85945459972719,
+      "lon": 2.3239084,
+      "distanceM": 290,
+      "indoor": true
+    },
+    {
+      "id": "516cd6cf51fd8902405993f4f5c2ae6d4840f00103f90137e1d7690100000092030a42696f20432720426f6e",
+      "name": "Bio C' Bon",
+      "category": "commercial,commercial.supermarket",
+      "lat": 48.856895799727816,
+      "lon": 2.3173776999999998,
+      "distanceM": 295,
+      "indoor": true
+    },
+    {
+      "id": "5112d7d6f44597024059164715b0d36d4840f00103f9012389de4e0200000092030954696265726d6f6e74",
+      "name": "Tibermont",
+      "category": "commercial,commercial.antiques",
+      "lat": 48.85802269972753,
+      "lon": 2.3238639,
+      "distanceM": 296,
+      "indoor": true
+    },
+    {
+      "id": "51ad9ae7887c97024059c9af38e2da6d4840f00103f901e1393a2a01000000920306506572656e65",
+      "name": "Perene",
+      "category": "commercial,commercial.furniture_and_interior",
+      "lat": 48.85824229972747,
+      "lon": 2.3239679999999994,
+      "distanceM": 296,
+      "indoor": true
+    },
+    {
+      "id": "51b23742507f97024059ec769ce8046e4840f00103f901ad16aebc02000000920312536f7576656e697273206465205061726973",
+      "name": "Souvenirs de Paris",
+      "category": "commercial,commercial.gift_and_souvenir",
+      "lat": 48.859524799727154,
+      "lon": 2.3239732999999996,
+      "distanceM": 296,
+      "indoor": true
+    },
+    {
+      "id": "5171e5ec9dd196024059b5b8e3ee186e4840f00103f901c0563a2a0100000092030d31206574203120666f6e742033",
+      "name": "1 et 1 font 3",
+      "category": "commercial,commercial.clothing,commercial.clothing.clothes",
+      "lat": 48.860135899727005,
+      "lon": 2.323642,
+      "distanceM": 298,
+      "indoor": true
+    },
+    {
+      "id": "518f7b09776d92024059f0dbedc04a6e4840f00102f90116e9c9030000000092031047616c65726965204a2e204b7567656c",
+      "name": "Galerie J. Kugel",
+      "category": "building,building.commercial,building.entertainment,building.tourism",
+      "lat": 48.86165629972663,
+      "lon": 2.321497850396049,
+      "distanceM": 326,
+      "indoor": true
+    },
+    {
+      "id": "512c335b689d97024059bf7beddf066e4840f00103f901ae16aebc0200000092030cc38976616e67656c69737461",
+      "name": "Évangelista",
+      "category": "catering,catering.fast_food",
+      "lat": 48.85958479972714,
+      "lon": 2.3240307,
+      "distanceM": 302,
+      "indoor": true
+    },
+    {
+      "id": "510fd1e80e62970240593fe1b07ad16d4840f00103f901ee553a2a010000009203054d6f6c6c69",
+      "name": "Molli",
+      "category": "commercial,commercial.clothing,commercial.clothing.clothes",
+      "lat": 48.85795529972756,
+      "lon": 2.3239175,
+      "distanceM": 302,
+      "indoor": true
+    },
+    {
+      "id": "513593ae9bb59602405984b600c4b86d4840f00102f9019e53e8090000000092031e4d6169736f6e206465206ce28099416dc3a97269717565206c6174696e65",
+      "name": "Maison de l’Amérique latine",
+      "category": "entertainment,entertainment.culture,entertainment.culture.arts_centre,wheelchair",
+      "lat": 48.857201099727746,
+      "lon": 2.3235885775233336,
+      "distanceM": 320,
+      "indoor": true
+    }
+  ]
+}

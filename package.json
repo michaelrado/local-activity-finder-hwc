@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "npm run -s lint:backend && npm run -s lint:frontend",
+    "lint:fix": "npm run -s lint:fix:backend && npm run -s lint:fix:frontend",
+    "lint:backend": "composer lint",
+    "lint:fix:backend": "composer lint:fix",
+    "lint:frontend": "cd ui && npm run -s lint && npm run -s format",
+    "lint:fix:frontend": "cd ui && npm run -s lint:fix && npm run -s format:fix",
+    "test": "npm run -s test:backend && npm run -s test:frontend",
+    "test:backend": "composer test",
+    "test:frontend": "cd ui && npm test --silent --if-present"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "axios": "^1.11.0",
+    "concurrently": "^9.0.1",
+    "laravel-vite-plugin": "^2.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^7.0.7"
+  }
+}

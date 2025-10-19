@@ -1,0 +1,580 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Local Activity Finder API",
+    "version": "0.2.0",
+    "description": "Weather-aware activities and recommendations around a location. Backed by upstream providers (Open-Meteo, OpenTripMap, Nominatim) with caching, retry/backoff, and optional mock mode. All responses are JSON."
+  },
+  "servers": [{ "url": "/", "description": "Laravel app root" }],
+  "paths": {
+    "/api/weather": {
+      "get": {
+        "summary": "Get current weather (normalized)",
+        "description": "Returns a normalized snapshot of current weather plus selected hourly fields at the given coordinates.",
+        "parameters": [
+          { "$ref": "#/components/parameters/lat" },
+          { "$ref": "#/components/parameters/lon" }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Source": {
+                "description": "Indicates whether data came from live, cache, or mock mode.",
+                "schema": {
+                  "type": "string",
+                  "enum": ["live", "cache", "mock"]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Weather" },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "tempC": 19.3,
+                      "windKph": 12.6,
+                      "precipMm": 0.0,
+                      "precipProb": 10,
+                      "hourly": ["2025-10-14T14:00:00Z", "2025-10-14T15:00:00Z"]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "429": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/api/activities": {
+      "get": {
+        "summary": "List nearby activities/POIs",
+        "description": "Returns normalized points of interest around a location. Supports radius and indoor/outdoor filtering.",
+        "parameters": [
+          { "$ref": "#/components/parameters/lat" },
+          { "$ref": "#/components/parameters/lon" },
+          { "$ref": "#/components/parameters/radius" },
+          { "$ref": "#/components/parameters/type" }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Source": {
+                "description": "Indicates whether data came from live, cache, or mock mode.",
+                "schema": {
+                  "type": "string",
+                  "enum": ["live", "cache", "mock"]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ActivitiesResponse" },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "items": [
+                        {
+                          "id": "X123",
+                          "name": "City Museum",
+                          "category": "museums,galleries",
+                          "lat": 40.7129,
+                          "lon": -74.0061,
+                          "distanceM": 820,
+                          "indoor": true
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "429": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/api/recommendations": {
+      "get": {
+        "summary": "Get weather-aware activity recommendations",
+        "description": "Returns activities scored based on proximity and current weather. Sorted descending by score.",
+        "parameters": [
+          { "$ref": "#/components/parameters/lat" },
+          { "$ref": "#/components/parameters/lon" },
+          { "$ref": "#/components/parameters/radius" },
+          { "$ref": "#/components/parameters/type" }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Source": {
+                "description": "Indicates whether weather/POI data came from live, cache, or mock mode.",
+                "schema": {
+                  "type": "string",
+                  "enum": ["live", "cache", "mock"]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationsResponse"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "items": [
+                        {
+                          "id": "MUSEUM-9",
+                          "name": "Modern Art Museum",
+                          "category": "museums,galleries",
+                          "lat": 40.7131,
+                          "lon": -74.0058,
+                          "distanceM": 1200,
+                          "indoor": true,
+                          "score": 1.23,
+                          "factors": {
+                            "proximity": 0.6,
+                            "t": 19.3,
+                            "precip": 80,
+                            "mm": 1.1,
+                            "wind": 35
+                          },
+                          "reason": "Rainy conditions favor indoor venues; close by."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "429": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/api/geocode/search": {
+      "get": {
+        "summary": "Forward geocode (search by text)",
+        "description": "Uses Nominatim to convert a free-form query string (e.g., 'Times Square') into candidate coordinates.",
+        "parameters": [
+          { "$ref": "#/components/parameters/q" },
+          { "$ref": "#/components/parameters/limit" }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Source": {
+                "description": "Indicates whether data came from live, cache, or mock mode.",
+                "schema": {
+                  "type": "string",
+                  "enum": ["live", "cache", "mock"]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeocodeSearchResponse"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "items": [
+                        {
+                          "lat": 40.758,
+                          "lon": -73.9855,
+                          "display_name": "Times Square, Manhattan, New York, USA",
+                          "bbox": [40.7568, 40.7591, -73.9876, -73.9843],
+                          "type": "attraction",
+                          "importance": 0.8
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "429": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/api/geocode/reverse": {
+      "get": {
+        "summary": "Reverse geocode (coords → address)",
+        "description": "Uses Nominatim to convert coordinates into a human-readable address summary.",
+        "parameters": [
+          { "$ref": "#/components/parameters/lat" },
+          { "$ref": "#/components/parameters/lon" }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Source": {
+                "description": "Indicates whether data came from live, cache, or mock mode.",
+                "schema": {
+                  "type": "string",
+                  "enum": ["live", "cache", "mock"]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeocodeReverseResponse"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "lat": 40.758,
+                      "lon": -73.9855,
+                      "display_name": "Times Square, Manhattan, New York, USA",
+                      "address": {
+                        "road": "Broadway",
+                        "city": "New York",
+                        "state": "New York",
+                        "country": "United States",
+                        "postcode": "10036"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": { "$ref": "#/components/responses/ValidationError" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "429": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "lat": {
+        "name": "lat",
+        "in": "query",
+        "required": true,
+        "description": "Latitude in decimal degrees.",
+        "schema": { "type": "number", "minimum": -90, "maximum": 90 }
+      },
+      "lon": {
+        "name": "lon",
+        "in": "query",
+        "required": true,
+        "description": "Longitude in decimal degrees.",
+        "schema": { "type": "number", "minimum": -180, "maximum": 180 }
+      },
+      "radius": {
+        "name": "radius",
+        "in": "query",
+        "required": false,
+        "description": "Search radius in meters (100–20000). Defaults to 3000.",
+        "schema": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 20000,
+          "default": 3000
+        }
+      },
+      "type": {
+        "name": "type",
+        "in": "query",
+        "required": false,
+        "description": "Activity environment filter.",
+        "schema": {
+          "type": "string",
+          "enum": ["all", "indoor", "outdoor"],
+          "default": "all"
+        }
+      },
+      "q": {
+        "name": "q",
+        "in": "query",
+        "required": true,
+        "description": "Free-form query for forward geocoding.",
+        "schema": { "type": "string", "minLength": 2, "maxLength": 200 }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "description": "Maximum number of geocode candidates to return (1–10). Defaults to 5.",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 5
+        }
+      }
+    },
+    "schemas": {
+      "Weather": {
+        "type": "object",
+        "required": ["tempC", "windKph", "precipMm", "precipProb", "hourly"],
+        "properties": {
+          "tempC": {
+            "type": "number",
+            "description": "Current air temperature in °C."
+          },
+          "windKph": {
+            "type": "number",
+            "description": "Wind speed in kilometers per hour."
+          },
+          "precipMm": {
+            "type": "number",
+            "description": "Precipitation amount in mm for the current hour (approx.)."
+          },
+          "precipProb": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Precipitation probability in % for the current hour."
+          },
+          "hourlyDetail": {
+            "type": "array",
+            "description": "Aligned hourly forecast for the next 24–48 hours.",
+            "items": {
+              "type": "object",
+              "required": [
+                "time",
+                "tempC",
+                "precipMm",
+                "precipProb",
+                "windKph"
+              ],
+              "properties": {
+                "time": { "type": "string", "format": "date-time" },
+                "tempC": { "type": "number" },
+                "precipMm": { "type": "number" },
+                "precipProb": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "windKph": { "type": "number" }
+              }
+            }
+          }
+        }
+      },
+      "Activity": {
+        "type": "object",
+        "required": ["id", "name", "lat", "lon", "distanceM", "indoor"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "category": {
+            "type": "string",
+            "description": "Source category/tags (comma- or space-delimited)."
+          },
+          "lat": { "type": "number" },
+          "lon": { "type": "number" },
+          "distanceM": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Distance from query point in meters."
+          },
+          "indoor": {
+            "type": "boolean",
+            "description": "Heuristic indoor flag based on category."
+          }
+        }
+      },
+      "ActivitiesResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Activity" }
+          }
+        }
+      },
+      "RecommendationItem": {
+        "allOf": [
+          { "$ref": "#/components/schemas/Activity" },
+          {
+            "type": "object",
+            "required": ["score"],
+            "properties": {
+              "score": {
+                "type": "number",
+                "format": "float",
+                "description": "Composite ranking score (higher is better)."
+              },
+              "factors": {
+                "type": "object",
+                "properties": {
+                  "proximity": { "type": "number" },
+                  "t": {
+                    "type": "number",
+                    "nullable": true,
+                    "description": "Temperature °C"
+                  },
+                  "precip": {
+                    "type": "number",
+                    "description": "Precipitation probability %"
+                  },
+                  "mm": { "type": "number", "description": "Precipitation mm" },
+                  "wind": { "type": "number", "description": "Wind speed kph" }
+                },
+                "additionalProperties": false
+              },
+              "reason": {
+                "type": "string",
+                "description": "Human-friendly explanation of the score."
+              }
+            }
+          }
+        ]
+      },
+      "RecommendationsResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/RecommendationItem" }
+          }
+        }
+      },
+      "GeocodeCandidate": {
+        "type": "object",
+        "required": ["lat", "lon", "display_name", "bbox"],
+        "properties": {
+          "lat": { "type": "number" },
+          "lon": { "type": "number" },
+          "display_name": { "type": "string" },
+          "bbox": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "Bounding box [south, north, west, east]."
+          },
+          "type": { "type": "string", "nullable": true },
+          "importance": { "type": "number", "nullable": true }
+        }
+      },
+      "GeocodeSearchResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/GeocodeCandidate" }
+          }
+        }
+      },
+      "GeocodeReverseResponse": {
+        "type": "object",
+        "required": ["lat", "lon", "display_name", "address"],
+        "properties": {
+          "lat": { "type": "number" },
+          "lon": { "type": "number" },
+          "display_name": { "type": "string" },
+          "address": {
+            "type": "object",
+            "additionalProperties": { "type": "string" },
+            "description": "Key-value map from Nominatim address details."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": ["code", "message"],
+            "properties": {
+              "code": { "type": "string", "example": "VALIDATION_ERROR" },
+              "message": { "type": "string" },
+              "fields": {
+                "type": "object",
+                "additionalProperties": { "type": "string" },
+                "description": "Field-level errors for 4xx validation."
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "ValidationError": {
+        "description": "Invalid request parameters.",
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Error" },
+            "examples": {
+              "example": {
+                "value": {
+                  "error": {
+                    "code": "VALIDATION_ERROR",
+                    "message": "The lat field must be between -90 and 90.",
+                    "fields": { "lat": "between:-90,90" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UpstreamError": {
+        "description": "Upstream service error (weather/POI/geocode provider).",
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Error" },
+            "examples": {
+              "example": {
+                "value": {
+                  "error": {
+                    "code": "UPSTREAM_ERROR",
+                    "message": "Upstream service error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "RateLimited": {
+        "description": "Rate limited by upstream or internal guardrail.",
+        "headers": {
+          "Retry-After": {
+            "description": "Seconds to wait before retrying.",
+            "schema": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Error" },
+            "examples": {
+              "example": {
+                "value": {
+                  "error": {
+                    "code": "RATE_LIMITED",
+                    "message": "Please retry later."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
