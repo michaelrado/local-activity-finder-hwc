@@ -16,12 +16,8 @@
 
 ## Setup
 
-1. Copy .env.example to .env
-2. Configure Nominatim email address via "NOMINATIM_EMAIL" environment varible or .env file
-3. Configure via GeoAPIfy Key via "GEOAPIFY_API_KEY" environment varible or .env file
-4. Change to the ui folder "cd ui"
-5. Install vite "npm i -D vite @vitejs/plugin-react"
-6. Create default DB with "php artisan migrate"
+1. Configure Nominatim email address via "NOMINATIM_EMAIL" environment varible or .env file
+2. Configure via GeoAPIfy Key via "GEOAPIFY_API_KEY" environment varible or .env file
 
 ## Running the server
 
